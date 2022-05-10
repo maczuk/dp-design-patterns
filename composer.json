@@ -1,0 +1,16 @@
+{
+    "name": "maciej.zukiewicz/dp-design-patterns",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "DesignPatterns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maciej Żukiewicz",
+            "email": "maciej.zukiewicz@docplanner.com"
+        }
+    ],
+    "require": {}
+}
