@@ -6,5 +6,5 @@ namespace DesignPatterns\Tank;
 
 interface HeavyArmoredTankInterface extends TankInterface
 {
-    public function acceptBullet(Bullet $bullet): void;
+
 }

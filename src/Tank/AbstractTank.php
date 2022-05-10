@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace DesignPatterns\Tank;
 
-class AbstractTank
+abstract class AbstractTank implements TankInterface
 {
     protected int $health;
     protected int $lightArmoredAttackPower;
     protected int $heavyArmoredAttackPower;
+    protected ?Division $division;
 
     public function getHealth(): int
     {
@@ -28,5 +29,20 @@ class AbstractTank
     public function getHeavyArmoredAttackPower(): int
     {
         return $this->heavyArmoredAttackPower;
+    }
+
+    public function setDivision(?Division $division): void
+    {
+        $this->division = $division;
+    }
+
+    public function shoot(TankInterface $aim): void
+    {
+        $bullet = new Bullet($this);
+        $aim->acceptBullet($bullet);
+
+        if (null !== $this->division) {
+            $this->division->shoot($this, $aim);
+        }
     }
 }
